@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "if0_34732556",
-    "password": "188QiKvWHisEjX",
-    "database": "if0_34732556_reactbd",
-    "host": "sql213.infinityfree.com",
+    "username": "id21101361_reactbd_user",
+    "password": "Ghalas@2023",
+    "database": "id21101361_reactbd",
+    "host": "files.000webhost.com",
     "dialect": "mysql"
   }
 }
