@@ -7,7 +7,7 @@ const { sign } = require("jsonwebtoken");
 
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
-  bcrypt.hash(password, 10).then((hash) => {
+  await bcrypt.hash(password, 10).then((hash) => {
     Users.create({
       username: username,
       password: hash,
@@ -24,7 +24,7 @@ router.post("/login", async (req, res) => {
   if (!user) {
     res.json({ error: "User Doesn't Exist" });
   } else {
-    bcrypt.compare(password, user.password).then((match) => {
+    await bcrypt.compare(password, user.password).then((match) => {
       if (!match) {
         res.json({ error: "Wrong Username And Password Combination" });
       } else {
@@ -65,12 +65,12 @@ router.put("/changepassword", validateToken, async (req, res) => {
       where: { username: req.user.username },
     });
 
-    bcrypt.compare(oldPassword, user.password).then((match) => {
+    await bcrypt.compare(oldPassword, user.password).then(async (match) => {
       if (!match) {
         res.json({ error: "Wrong Password Entred !" });
       } else {
-        bcrypt.hash(newPassword, 10).then(async (hash) => {
-          Users.update(
+        await bcrypt.hash(newPassword, 10).then(async (hash) => {
+          await Users.update(
             {
               password: hash,
             },
