@@ -17,7 +17,7 @@
     "username": "reactbd_user",
     "password": "oyMCDf3kzuLf5RWgoCvEpmBAZqVBElPS",
     "database": "reactbd",
-    "host": "0.0.0.0",
+    "host": "0.0.0.0/0",
     "dialect": "mysql"
   }
 }
