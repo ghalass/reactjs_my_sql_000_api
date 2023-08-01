@@ -9,6 +9,9 @@
     "build": "",
     "startdev": "nodemon index.js"
   },
+  "engines": {
+    "node": "18.17.0"
+  },
   "author": "Ghalass",
   "license": "ISC",
   "dependencies": {
