@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
       username: username,
       password: hash,
     });
-    res.json("SUCCESS");
+    res.json("SUCCESS TO ADD POST");
   });
 });
 
