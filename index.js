@@ -19,6 +19,12 @@ app.use(cors());
 
 const db = require("./models");
 
+// TEST ROUTER
+// const testRouter = require("./routes/Test");
+app.get("/", (req, res) => {
+  res.json("Welcome to the API.");
+});
+
 // POSTS ROUTER
 const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
