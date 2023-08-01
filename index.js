@@ -4,7 +4,15 @@ const cors = require("cors");
 require("colors");
 require("dotenv").config();
 
-const PORT = process.env.PORT || 3001;
+let PORT = 3001;
+
+if (process.env.NODE_ENV == "development") {
+  PORT = process.env.PORT_DEV || 3001;
+}
+
+if (process.env.NODE_ENV == "production") {
+  PORT = process.env.PORT_PROD || 3001;
+}
 
 app.use(express.json());
 app.use(cors());
