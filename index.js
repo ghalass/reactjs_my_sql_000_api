@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-// require("colors");
+require("colors");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
@@ -30,11 +30,10 @@ db.sequelize
   .then(() => {
     app.listen(PORT, () => {
       console.log(
-        // " OK ".green.inverse + ` SERVER IS RUNNING ON PORT : ` + `${PORT}`.green
-        " OK " + ` SERVER IS RUNNING ON PORT : ` + `${PORT}`
+        " OK ".green.inverse + ` SERVER IS RUNNING ON PORT : ` + `${PORT}`.green
       );
     });
   })
   .catch((err) => {
-    console.log(" NOK " + `${err}`);
+    console.log(" NOK ".red.inverse + `${err}`.red);
   });
